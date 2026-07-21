@@ -1,5 +1,5 @@
 /* ── Font ──────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
 
 /* ── Reset ─────────────────────────────────────── */
 *, *::before, *::after {
@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Bubblegum Sans', cursive;
 }
 
 /* ── Navbar ────────────────────────────────────── */
