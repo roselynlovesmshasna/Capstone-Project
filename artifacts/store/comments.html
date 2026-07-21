@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comments — My Store</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/comments.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar">
+    <div class="nav-search">
+      <input type="text" placeholder="Search..." />
+      <button><i class="fas fa-search"></i></button>
+    </div>
+    <div class="nav-actions">
+      <a href="/" class="nav-btn">Home</a>
+      <a href="/cart.html" class="nav-btn">Cart</a>
+      <a href="/points.html" class="nav-btn">Points</a>
+      <a href="/comments.html" class="nav-btn active-link">Comments</a>
+    </div>
+    <div class="nav-logo">
+      <img src="https://placehold.co/80x32/4f46e5/ffffff?text=logo&font=raleway" alt="Logo" />
+    </div>
+  </nav>
+
+  <!-- ── Comments Page ── -->
+  <main class="comments-page">
+
+    <h1 class="comments-title">Customer Comments</h1>
+    <p class="comments-subtitle">Comments are posted after checkout.</p>
+
+    <!-- ── Add Comment Form (visible after checkout) ── -->
+    <form class="add-comment-form" action="#" method="post">
+      <h2>Leave a Comment</h2>
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required />
+      </div>
+      <div class="form-row">
+        <label for="rating">Rating</label>
+        <div class="star-rating">
+          <input type="radio" id="star5" name="rating" value="5" /><label for="star5"><i class="fas fa-star"></i></label>
+          <input type="radio" id="star4" name="rating" value="4" /><label for="star4"><i class="fas fa-star"></i></label>
+          <input type="radio" id="star3" name="rating" value="3" /><label for="star3"><i class="fas fa-star"></i></label>
+          <input type="radio" id="star2" name="rating" value="2" /><label for="star2"><i class="fas fa-star"></i></label>
+          <input type="radio" id="star1" name="rating" value="1" /><label for="star1"><i class="fas fa-star"></i></label>
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="comment">Comment</label>
+        <textarea id="comment" name="comment" rows="4" placeholder="Share your experience..." required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Post Comment</button>
+    </form>
+
+    <!-- ── Comments List ── -->
+    <section class="comments-list">
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">S</div>
+          <div class="comment-meta">
+            <span class="comment-author">Sarah M.</span>
+            <span class="comment-date">July 18, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">Absolutely love the sneakers! Arrived in two days and the quality is outstanding. Will definitely shop here again.</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">J</div>
+          <div class="comment-meta">
+            <span class="comment-author">James K.</span>
+            <span class="comment-date">July 17, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">The leather tote bag is exactly as described. Solid stitching and a great size for daily use. Minus one star because the shipping took a bit longer than expected.</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">A</div>
+          <div class="comment-meta">
+            <span class="comment-author">Aiko T.</span>
+            <span class="comment-date">July 16, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">The smart watch exceeded my expectations! Battery lasts two full days and the strap is very comfortable. Packaging was also really nice.</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">R</div>
+          <div class="comment-meta">
+            <span class="comment-author">Rafael G.</span>
+            <span class="comment-date">July 15, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">Sunglasses look great but the UV protection label was hard to find. Good overall quality for the price though.</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">L</div>
+          <div class="comment-meta">
+            <span class="comment-author">Lily W.</span>
+            <span class="comment-date">July 14, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">Ordered three items, all arrived perfectly packed. Customer support was super helpful when I had a sizing question. Five stars!</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">M</div>
+          <div class="comment-meta">
+            <span class="comment-author">Marcus B.</span>
+            <span class="comment-date">July 13, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">Great store overall. The points system is a nice touch — already earned enough for a discount on my next order.</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">N</div>
+          <div class="comment-meta">
+            <span class="comment-author">Nina P.</span>
+            <span class="comment-date">July 12, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">The tote bag is gorgeous in person. The color is richer than the photos suggest. I've gotten so many compliments already.</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">D</div>
+          <div class="comment-meta">
+            <span class="comment-author">David C.</span>
+            <span class="comment-date">July 11, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">Fast delivery and solid build quality on the sneakers. Sizing runs slightly large so order half a size down.</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">Y</div>
+          <div class="comment-meta">
+            <span class="comment-author">Yuna H.</span>
+            <span class="comment-date">July 10, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">My go-to online store now. Everything I've bought has been exactly as shown. The checkout process is quick and easy too.</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">T</div>
+          <div class="comment-meta">
+            <span class="comment-author">Tom E.</span>
+            <span class="comment-date">July 9, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">Watch is decent but the instruction manual was only in one language. Product itself works well, just a minor inconvenience.</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">C</div>
+          <div class="comment-meta">
+            <span class="comment-author">Chloe R.</span>
+            <span class="comment-date">July 8, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">I bought the sunglasses as a gift and the recipient absolutely loved them. The case it comes with is a lovely bonus.</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">O</div>
+          <div class="comment-meta">
+            <span class="comment-author">Omar F.</span>
+            <span class="comment-date">July 7, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">Ordered twice this month and both times the items arrived ahead of schedule. Really happy with this store.</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">E</div>
+          <div class="comment-meta">
+            <span class="comment-author">Emma S.</span>
+            <span class="comment-date">July 6, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">Love the sneaker design and the tote bag. Both are everyday staples for me now. Would love to see more color options!</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">K</div>
+          <div class="comment-meta">
+            <span class="comment-author">Kevin L.</span>
+            <span class="comment-date">July 5, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">Exceptional quality across the board. The smart watch looks premium and the sneakers are very comfortable from day one.</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">P</div>
+          <div class="comment-meta">
+            <span class="comment-author">Priya V.</span>
+            <span class="comment-date">July 4, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">Smooth shopping experience from browsing to checkout. The rewards points are a great incentive to keep coming back.</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">B</div>
+          <div class="comment-meta">
+            <span class="comment-author">Ben A.</span>
+            <span class="comment-date">July 3, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">Product was good but I had a small issue with the return process. Support eventually resolved it but it took a few days.</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">I</div>
+          <div class="comment-meta">
+            <span class="comment-author">Isabella N.</span>
+            <span class="comment-date">July 2, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">The tote bag is chef's kiss. It fits my laptop, water bottle, and daily essentials with room to spare. Highly recommend.</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">G</div>
+          <div class="comment-meta">
+            <span class="comment-author">George M.</span>
+            <span class="comment-date">July 1, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">Really pleased with my purchase. The sunglasses block glare perfectly. Would appreciate a wider nose-bridge option.</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">Z</div>
+          <div class="comment-meta">
+            <span class="comment-author">Zara Q.</span>
+            <span class="comment-date">June 30, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">This store has become my favorite. Every item feels handpicked for quality. The smart watch is stunning in real life.</p>
+      </div>
+
+      <div class="comment-card">
+        <div class="comment-header">
+          <div class="comment-avatar">H</div>
+          <div class="comment-meta">
+            <span class="comment-author">Henry J.</span>
+            <span class="comment-date">June 29, 2026</span>
+          </div>
+          <div class="comment-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+        </div>
+        <p class="comment-body">First time ordering here and I'm already planning my next purchase. Super fast shipping and the products are top notch.</p>
+      </div>
+
+    </section>
+  </main>
+
+</body>
+</html>
