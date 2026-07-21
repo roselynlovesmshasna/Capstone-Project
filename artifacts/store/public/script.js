@@ -17,7 +17,7 @@ function goTo(index) {
 
 function startAuto() {
   clearInterval(autoTimer);
-  autoTimer = setInterval(() => goTo(current + 1), 4000);
+  autoTimer = setInterval(() => goTo(current + 1), 10000);
 }
 
 prevBtn.addEventListener('click', () => { goTo(current - 1); startAuto(); });
