@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Store</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar">
+
+    <!-- Search — far left, wide -->
+    <div class="nav-search">
+      <input type="text" placeholder="Search..." />
+      <button><i class="fas fa-search"></i></button>
+    </div>
+
+    <!-- Nav actions -->
+    <div class="nav-actions">
+      <button class="nav-btn">Cart</button>
+      <button class="nav-btn">Points</button>
+      <button class="nav-btn">Comments</button>
+    </div>
+
+    <!-- Logo — far right -->
+    <div class="nav-logo">
+      <img src="https://placehold.co/80x32/4f46e5/ffffff?text=logo&font=raleway" alt="Logo" />
+    </div>
+
+  </nav>
+
+  <!-- ── Hero Slider ── -->
+  <section class="slider">
+    <div class="slides">
+      <div class="slide active">
+        <img src="https://placehold.co/1400x480/4f46e5/ffffff?text=New+Items+1" alt="Slide 1" />
+      </div>
+      <div class="slide">
+        <img src="https://placehold.co/1400x480/7c3aed/ffffff?text=New+Items+2" alt="Slide 2" />
+      </div>
+      <div class="slide">
+        <img src="https://placehold.co/1400x480/0ea5e9/ffffff?text=New+Items+3" alt="Slide 3" />
+      </div>
+      <div class="slide">
+        <img src="https://placehold.co/1400x480/10b981/ffffff?text=New+Items+4" alt="Slide 4" />
+      </div>
+      <div class="slide">
+        <img src="https://placehold.co/1400x480/f59e0b/ffffff?text=New+Items+5" alt="Slide 5" />
+      </div>
+      <div class="slide">
+        <img src="https://placehold.co/1400x480/ef4444/ffffff?text=New+Items+6" alt="Slide 6" />
+      </div>
+    </div>
+
+    <button class="slider-btn prev" id="prev"><i class="fas fa-chevron-left"></i></button>
+    <button class="slider-btn next" id="next"><i class="fas fa-chevron-right"></i></button>
+
+    <div class="slider-dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+      <span class="dot" data-index="3"></span>
+      <span class="dot" data-index="4"></span>
+      <span class="dot" data-index="5"></span>
+    </div>
+  </section>
+
+  <!-- ── Bottom Section ── -->
+  <section class="bottom-section">
+
+    <!-- Left: 2 product cards -->
+    <div class="product-cards">
+
+      <div class="product-card">
+        <div class="card-image">
+          <img src="https://placehold.co/200x180/f3f4f6/374151?text=New+Item" alt="New Item" />
+        </div>
+        <div class="card-controls">
+          <button class="qty-btn">+</button>
+          <button class="qty-btn">−</button>
+          <button class="save-btn">Save</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="card-image">
+          <img src="https://placehold.co/200x180/f3f4f6/374151?text=New+Item" alt="New Item" />
+        </div>
+        <div class="card-controls">
+          <button class="qty-btn">+</button>
+          <button class="qty-btn">−</button>
+          <button class="save-btn">Save</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right: Shopping List -->
+    <div class="shopping-list">
+      <h2>Shopping List</h2>
+      <ul class="list-items">
+        <li>
+          <img src="https://placehold.co/48x48/f3f4f6/374151?text=1" alt="Item" />
+          <div class="list-item-info">
+            <span class="item-name">Classic Sneakers</span>
+            <span class="item-price">$89.99</span>
+          </div>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i></button>
+        </li>
+        <li>
+          <img src="https://placehold.co/48x48/f3f4f6/374151?text=2" alt="Item" />
+          <div class="list-item-info">
+            <span class="item-name">Leather Tote Bag</span>
+            <span class="item-price">$129.00</span>
+          </div>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i></button>
+        </li>
+        <li>
+          <img src="https://placehold.co/48x48/f3f4f6/374151?text=3" alt="Item" />
+          <div class="list-item-info">
+            <span class="item-name">UV Sunglasses</span>
+            <span class="item-price">$45.00</span>
+          </div>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i></button>
+        </li>
+        <li>
+          <img src="https://placehold.co/48x48/f3f4f6/374151?text=4" alt="Item" />
+          <div class="list-item-info">
+            <span class="item-name">Smart Watch</span>
+            <span class="item-price">$199.99</span>
+          </div>
+          <button class="add-to-cart-btn"><i class="fas fa-plus"></i></button>
+        </li>
+      </ul>
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
