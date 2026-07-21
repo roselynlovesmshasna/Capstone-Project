@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Points — My Store</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/points.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar">
+    <div class="nav-search">
+      <input type="text" placeholder="Search..." />
+      <button><i class="fas fa-search"></i></button>
+    </div>
+    <div class="nav-actions">
+      <a href="/" class="nav-btn">Home</a>
+      <a href="/cart.html" class="nav-btn">Cart</a>
+      <a href="/points.html" class="nav-btn active-link">Points</a>
+      <a href="/comments.html" class="nav-btn">Comments</a>
+    </div>
+    <div class="nav-logo">
+      <img src="https://placehold.co/80x32/4f46e5/ffffff?text=logo&font=raleway" alt="Logo" />
+    </div>
+  </nav>
+
+  <!-- ── Points Page ── -->
+  <main class="points-page">
+
+    <!-- ── Balance Card ── -->
+    <section class="balance-section">
+      <div class="balance-card">
+        <div class="balance-icon"><i class="fas fa-star"></i></div>
+        <div class="balance-info">
+          <span class="balance-label">Your Points Balance</span>
+          <span class="balance-value">1,240 pts</span>
+        </div>
+        <div class="balance-worth">
+          <span class="worth-label">Cash value</span>
+          <span class="worth-value">≈ $6.20</span>
+        </div>
+      </div>
+
+      <!-- Progress toward 50% discount milestone -->
+      <div class="milestone-card">
+        <div class="milestone-header">
+          <span class="milestone-label"><i class="fas fa-bolt"></i> 50% Discount Milestone</span>
+          <span class="milestone-count">1,240 / 1,000 pts</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" style="width: 100%;"></div>
+        </div>
+        <p class="milestone-note">
+          <i class="fas fa-check-circle"></i> You have reached 1,000 pts — a <strong>50% discount</strong> is available on your next checkout!
+        </p>
+      </div>
+    </section>
+
+    <!-- ── How It Works ── -->
+    <section class="rules-section">
+      <h2 class="section-title">How Points Work</h2>
+      <div class="rules-grid">
+
+        <div class="rule-card">
+          <div class="rule-icon"><i class="fas fa-cart-shopping"></i></div>
+          <h3>Earn Points</h3>
+          <p>Every <strong>$100</strong> you spend at checkout earns you <strong>20 points</strong>. Points are added to your balance automatically after payment.</p>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-icon"><i class="fas fa-dollar-sign"></i></div>
+          <h3>Redeem as Cash</h3>
+          <p><strong>200 points = $1.00</strong> off your order. Apply any amount of points at checkout to reduce your total — points are deducted from your balance immediately after use.</p>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-icon"><i class="fas fa-bolt"></i></div>
+          <h3>50% Discount Milestone</h3>
+          <p>Collect <strong>1,000 points</strong> and unlock a <strong>50% discount</strong> on your next order. The 1,000 points are deducted from your balance when the discount is applied.</p>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-icon"><i class="fas fa-rotate-left"></i></div>
+          <h3>Points Deduction</h3>
+          <p>Points used as cash or for the milestone discount are <strong>removed from your balance</strong> after the order is confirmed. Unused points never expire.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Quick Reference Table ── -->
+    <section class="table-section">
+      <h2 class="section-title">Quick Reference</h2>
+      <table class="points-table">
+        <thead>
+          <tr>
+            <th>Action</th>
+            <th>Points</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Spend $100 at checkout</td>
+            <td class="positive">+ 20 pts</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Spend $200 at checkout</td>
+            <td class="positive">+ 40 pts</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Spend $500 at checkout</td>
+            <td class="positive">+ 100 pts</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Redeem 200 points as cash</td>
+            <td class="negative">− 200 pts</td>
+            <td>$1.00 off</td>
+          </tr>
+          <tr>
+            <td>Redeem 1,000 points as cash</td>
+            <td class="negative">− 1,000 pts</td>
+            <td>$5.00 off</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><i class="fas fa-bolt"></i> Milestone: 1,000 points collected</td>
+            <td class="negative">− 1,000 pts</td>
+            <td><strong>50% off entire order</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── Transaction History ── -->
+    <section class="history-section">
+      <h2 class="section-title">Points History</h2>
+      <div class="history-list">
+
+        <div class="history-row">
+          <div class="history-icon earn"><i class="fas fa-plus"></i></div>
+          <div class="history-info">
+            <span class="history-desc">Order #10042 — Purchase of $150.00</span>
+            <span class="history-date">July 18, 2026</span>
+          </div>
+          <span class="history-pts positive">+ 20 pts</span>
+        </div>
+
+        <div class="history-row">
+          <div class="history-icon earn"><i class="fas fa-plus"></i></div>
+          <div class="history-info">
+            <span class="history-desc">Order #10038 — Purchase of $300.00</span>
+            <span class="history-date">July 14, 2026</span>
+          </div>
+          <span class="history-pts positive">+ 60 pts</span>
+        </div>
+
+        <div class="history-row">
+          <div class="history-icon spend"><i class="fas fa-minus"></i></div>
+          <div class="history-info">
+            <span class="history-desc">Order #10035 — Points redeemed as cash ($1.00 off)</span>
+            <span class="history-date">July 10, 2026</span>
+          </div>
+          <span class="history-pts negative">− 200 pts</span>
+        </div>
+
+        <div class="history-row">
+          <div class="history-icon earn"><i class="fas fa-plus"></i></div>
+          <div class="history-info">
+            <span class="history-desc">Order #10035 — Purchase of $220.00</span>
+            <span class="history-date">July 10, 2026</span>
+          </div>
+          <span class="history-pts positive">+ 40 pts</span>
+        </div>
+
+        <div class="history-row">
+          <div class="history-icon spend"><i class="fas fa-bolt"></i></div>
+          <div class="history-info">
+            <span class="history-desc">Order #10029 — 50% Milestone Discount applied</span>
+            <span class="history-date">July 3, 2026</span>
+          </div>
+          <span class="history-pts negative">− 1,000 pts</span>
+        </div>
+
+        <div class="history-row">
+          <div class="history-icon earn"><i class="fas fa-plus"></i></div>
+          <div class="history-info">
+            <span class="history-desc">Order #10029 — Purchase of $500.00</span>
+            <span class="history-date">July 3, 2026</span>
+          </div>
+          <span class="history-pts positive">+ 100 pts</span>
+        </div>
+
+        <div class="history-row">
+          <div class="history-icon earn"><i class="fas fa-plus"></i></div>
+          <div class="history-info">
+            <span class="history-desc">Order #10021 — Purchase of $400.00</span>
+            <span class="history-date">June 25, 2026</span>
+          </div>
+          <span class="history-pts positive">+ 80 pts</span>
+        </div>
+
+        <div class="history-row">
+          <div class="history-icon earn"><i class="fas fa-plus"></i></div>
+          <div class="history-info">
+            <span class="history-desc">Order #10015 — Purchase of $250.00</span>
+            <span class="history-date">June 18, 2026</span>
+          </div>
+          <span class="history-pts positive">+ 40 pts</span>
+        </div>
+
+        <div class="history-row">
+          <div class="history-icon spend"><i class="fas fa-minus"></i></div>
+          <div class="history-info">
+            <span class="history-desc">Order #10010 — Points redeemed as cash ($2.50 off)</span>
+            <span class="history-date">June 10, 2026</span>
+          </div>
+          <span class="history-pts negative">− 500 pts</span>
+        </div>
+
+        <div class="history-row">
+          <div class="history-icon earn"><i class="fas fa-plus"></i></div>
+          <div class="history-info">
+            <span class="history-desc">Order #10010 — Purchase of $600.00</span>
+            <span class="history-date">June 10, 2026</span>
+          </div>
+          <span class="history-pts positive">+ 120 pts</span>
+        </div>
+
+        <div class="history-row">
+          <div class="history-icon earn"><i class="fas fa-plus"></i></div>
+          <div class="history-info">
+            <span class="history-desc">Order #10003 — Purchase of $100.00</span>
+            <span class="history-date">June 2, 2026</span>
+          </div>
+          <span class="history-pts positive">+ 20 pts</span>
+        </div>
+
+        <div class="history-row">
+          <div class="history-icon earn"><i class="fas fa-plus"></i></div>
+          <div class="history-info">
+            <span class="history-desc">Welcome bonus — Account created</span>
+            <span class="history-date">June 1, 2026</span>
+          </div>
+          <span class="history-pts positive">+ 1,460 pts</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
