@@ -12,8 +12,9 @@
   <!-- ── Navbar ── -->
   <nav class="navbar">
     <div class="nav-search">
-      <input type="text" placeholder="Search..." />
-      <button><i class="fas fa-search"></i></button>
+      <input type="text" id="searchInput" placeholder="Search products..." autocomplete="off" />
+      <button id="searchBtn"><i class="fas fa-search"></i></button>
+      <div class="search-dropdown" id="searchDropdown"></div>
     </div>
     <div class="nav-actions">
       <a href="/cart.html" class="nav-btn">Cart</a>
@@ -62,23 +63,25 @@
   <!-- ── Bottom Section ── -->
   <section class="bottom-section">
     <div class="product-cards">
-      <div class="product-card">
+      <div class="product-card" data-id="sneakers" data-name="Classic Sneakers" data-price="89.99" data-img="https://placehold.co/100x100/ede9fe/4f46e5?text=👟">
         <div class="card-image">
-          <img src="https://placehold.co/200x180/f3f4f6/374151?text=New+Item" alt="New Item" />
+          <img src="https://placehold.co/200x180/f3f4f6/374151?text=Sneakers" alt="Classic Sneakers" />
         </div>
         <div class="card-controls">
-          <button class="qty-btn">+</button>
-          <button class="qty-btn">−</button>
+          <button class="qty-btn plus">+</button>
+          <span class="qty-display">0</span>
+          <button class="qty-btn minus">−</button>
           <button class="save-btn">Save</button>
         </div>
       </div>
-      <div class="product-card">
+      <div class="product-card" data-id="tote" data-name="Leather Tote Bag" data-price="129.00" data-img="https://placehold.co/100x100/fef3c7/d97706?text=👜">
         <div class="card-image">
-          <img src="https://placehold.co/200x180/f3f4f6/374151?text=New+Item" alt="New Item" />
+          <img src="https://placehold.co/200x180/f3f4f6/374151?text=Tote+Bag" alt="Leather Tote Bag" />
         </div>
         <div class="card-controls">
-          <button class="qty-btn">+</button>
-          <button class="qty-btn">−</button>
+          <button class="qty-btn plus">+</button>
+          <span class="qty-display">0</span>
+          <button class="qty-btn minus">−</button>
           <button class="save-btn">Save</button>
         </div>
       </div>
