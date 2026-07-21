@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart — My Store</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/cart.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar">
+    <div class="nav-search">
+      <input type="text" placeholder="Search..." />
+      <button><i class="fas fa-search"></i></button>
+    </div>
+    <div class="nav-actions">
+      <a href="/" class="nav-btn">Home</a>
+      <button class="nav-btn">Points</button>
+      <button class="nav-btn">Comments</button>
+    </div>
+    <div class="nav-logo">
+      <img src="https://placehold.co/80x32/4f46e5/ffffff?text=logo&font=raleway" alt="Logo" />
+    </div>
+  </nav>
+
+  <!-- ── Cart Page ── -->
+  <main class="cart-page">
+
+    <h1 class="cart-title">Your Cart</h1>
+
+    <div class="cart-layout">
+
+      <!-- ── Cart Items ── -->
+      <section class="cart-items">
+
+        <!-- Item 1 -->
+        <div class="cart-item">
+          <img class="cart-item-img" src="https://placehold.co/100x100/ede9fe/4f46e5?text=👟" alt="Classic Sneakers" />
+          <div class="cart-item-details">
+            <span class="cart-item-name">Classic Sneakers</span>
+            <span class="cart-item-price">$89.99</span>
+          </div>
+          <div class="cart-item-qty">
+            <button class="qty-ctrl">−</button>
+            <span class="qty-value">2</span>
+            <button class="qty-ctrl">+</button>
+          </div>
+          <span class="cart-item-subtotal">$179.98</span>
+          <button class="cart-item-remove"><i class="fas fa-trash"></i></button>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="cart-item">
+          <img class="cart-item-img" src="https://placehold.co/100x100/fef3c7/d97706?text=👜" alt="Leather Tote Bag" />
+          <div class="cart-item-details">
+            <span class="cart-item-name">Leather Tote Bag</span>
+            <span class="cart-item-price">$129.00</span>
+          </div>
+          <div class="cart-item-qty">
+            <button class="qty-ctrl">−</button>
+            <span class="qty-value">1</span>
+            <button class="qty-ctrl">+</button>
+          </div>
+          <span class="cart-item-subtotal">$129.00</span>
+          <button class="cart-item-remove"><i class="fas fa-trash"></i></button>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="cart-item">
+          <img class="cart-item-img" src="https://placehold.co/100x100/d1fae5/065f46?text=🕶️" alt="UV Sunglasses" />
+          <div class="cart-item-details">
+            <span class="cart-item-name">UV Sunglasses</span>
+            <span class="cart-item-price">$45.00</span>
+          </div>
+          <div class="cart-item-qty">
+            <button class="qty-ctrl">−</button>
+            <span class="qty-value">1</span>
+            <button class="qty-ctrl">+</button>
+          </div>
+          <span class="cart-item-subtotal">$45.00</span>
+          <button class="cart-item-remove"><i class="fas fa-trash"></i></button>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="cart-item">
+          <img class="cart-item-img" src="https://placehold.co/100x100/e0e7ff/3730a3?text=⌚" alt="Smart Watch" />
+          <div class="cart-item-details">
+            <span class="cart-item-name">Smart Watch</span>
+            <span class="cart-item-price">$199.99</span>
+          </div>
+          <div class="cart-item-qty">
+            <button class="qty-ctrl">−</button>
+            <span class="qty-value">1</span>
+            <button class="qty-ctrl">+</button>
+          </div>
+          <span class="cart-item-subtotal">$199.99</span>
+          <button class="cart-item-remove"><i class="fas fa-trash"></i></button>
+        </div>
+
+      </section>
+
+      <!-- ── Order Summary ── -->
+      <aside class="cart-summary">
+        <h2 class="summary-title">Order Summary</h2>
+
+        <div class="summary-row">
+          <span>Items (5)</span>
+          <span>$553.97</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span>Free</span>
+        </div>
+        <div class="summary-row">
+          <span>Points discount</span>
+          <span>− $0.00</span>
+        </div>
+
+        <div class="summary-divider"></div>
+
+        <div class="summary-row summary-total">
+          <span>Total</span>
+          <span>$553.97</span>
+        </div>
+
+        <button class="checkout-btn">Checkout</button>
+        <a href="/" class="continue-link">← Continue Shopping</a>
+      </aside>
+
+    </div>
+  </main>
+
+</body>
+</html>
