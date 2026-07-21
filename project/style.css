@@ -11,49 +11,41 @@
   flex-direction: row;
   align-items: center;
   width: 100%;
-  height: 68px;
-  padding: 0 32px;
+  height: 56px;
+  padding: 0 24px;
+  gap: 16px;
 }
 
-/* Search on the LEFT */
+/* Search — left, stretches to fill available space */
 .nav-search {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-right: auto;
+  flex: 1;                  /* grows to fill space */
 }
 
 .nav-search input {
-  width: 220px;
+  flex: 1;                  /* input fills the search container */
 }
 
-/* Links + logo pushed to the RIGHT */
-.nav-links {
+/* Action buttons — grouped in a row */
+.nav-actions {
   display: flex;
   flex-direction: row;
   align-items: center;
-  list-style: none;
   gap: 8px;
 }
 
+/* Logo — far right, no grow/shrink */
 .nav-logo {
   display: flex;
   align-items: center;
-  margin-left: 24px;
+  flex-shrink: 0;
 }
 
 .nav-logo img {
-  height: 36px;
+  height: 32px;
   display: block;
-}
-
-.nav-cart {
-  margin-left: 16px;
-  position: relative;
-}
-
-.hamburger {
-  display: none;
 }
 
 /* ── Slider ────────────────────────────────────── */
@@ -64,19 +56,16 @@
 }
 
 .slides {
-  display: flex;
   width: 100%;
 }
 
 .slide {
   display: none;
   width: 100%;
-  flex-shrink: 0;
 }
 
 .slide.active {
   display: block;
-  width: 100%;
 }
 
 .slide img {
@@ -110,30 +99,43 @@
   flex-direction: row;
   align-items: flex-start;
   width: 100%;
-  padding: 32px;
+  padding: 32px 24px;
   gap: 32px;
 }
 
-/* 2 promo cards stacked vertically on the left */
-.promo-cards {
+/* ── Product Cards — left side, 2 cards in a row ── */
+.product-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  flex: 1;                  /* takes up left portion */
+}
+
+.product-card {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  align-items: flex-start;
   flex: 1;
 }
 
-.promo-card {
-  display: flex;
-  flex-direction: column;
+.card-image {
   width: 100%;
 }
 
-.promo-card img {
+.card-image img {
   width: 100%;
   display: block;
 }
 
-/* Shopping list on the right */
+.card-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* ── Shopping List — right side ─────────────────── */
 .shopping-list {
   width: 320px;
   flex-shrink: 0;
@@ -155,9 +157,10 @@
 }
 
 .list-items li img {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   flex-shrink: 0;
+  display: block;
 }
 
 .list-item-info {
@@ -171,37 +174,29 @@
   .navbar {
     flex-wrap: wrap;
     height: auto;
-    padding: 12px 20px;
-    gap: 12px;
-  }
-
-  .hamburger {
-    display: block;
-    margin-left: auto;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .nav-links.open {
-    display: flex;
+    padding: 12px 16px;
   }
 
   .nav-search {
     width: 100%;
-    margin-right: 0;
+    order: 1;
   }
 
-  .nav-search input {
-    width: 100%;
+  .nav-actions {
+    order: 2;
+  }
+
+  .nav-logo {
+    order: 3;
   }
 
   .bottom-section {
     flex-direction: column;
     padding: 16px;
+  }
+
+  .product-cards {
+    width: 100%;
   }
 
   .shopping-list {
