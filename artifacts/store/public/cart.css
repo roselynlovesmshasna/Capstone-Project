@@ -162,6 +162,19 @@
   margin-top: 4px;
 }
 
+.cart-empty {
+  text-align: center;
+  padding: 48px 24px;
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+.cart-empty a {
+  color: #4f46e5;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
 /* ── Mobile ────────────────────────────────────── */
 @media (max-width: 768px) {
   .cart-layout {

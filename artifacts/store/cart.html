@@ -18,8 +18,8 @@
     </div>
     <div class="nav-actions">
       <a href="/" class="nav-btn">Home</a>
-      <button class="nav-btn">Points</button>
-      <button class="nav-btn">Comments</button>
+      <a href="/points.html" class="nav-btn">Points</a>
+      <a href="/comments.html" class="nav-btn">Comments</a>
     </div>
     <div class="nav-logo">
       <img src="https://placehold.co/80x32/4f46e5/ffffff?text=logo&font=raleway" alt="Logo" />
@@ -107,8 +107,8 @@
         <h2 class="summary-title">Order Summary</h2>
 
         <div class="summary-row">
-          <span>Items (5)</span>
-          <span>$553.97</span>
+          <span id="summaryItemCount">Items (5)</span>
+          <span id="summaryItemTotal">$553.97</span>
         </div>
         <div class="summary-row">
           <span>Shipping</span>
@@ -116,22 +116,23 @@
         </div>
         <div class="summary-row">
           <span>Points discount</span>
-          <span>− $0.00</span>
+          <span id="summaryDiscount">− $0.00</span>
         </div>
 
         <div class="summary-divider"></div>
 
         <div class="summary-row summary-total">
           <span>Total</span>
-          <span>$553.97</span>
+          <span id="summaryTotal">$553.97</span>
         </div>
 
-        <button class="checkout-btn">Checkout</button>
+        <button class="checkout-btn" id="checkoutBtn">Checkout</button>
         <a href="/" class="continue-link">← Continue Shopping</a>
       </aside>
 
     </div>
   </main>
 
+  <script src="/cart.js?v=2"></script>
 </body>
 </html>
