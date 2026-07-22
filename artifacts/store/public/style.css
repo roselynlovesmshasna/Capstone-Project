@@ -220,12 +220,36 @@ body {
   display: block;
 }
 
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 8px;
+}
+
+.card-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.card-price {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
 .card-controls {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 8px;
   margin-top: 12px;
+}
+
+.qty-display {
+  font-size: 1rem;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
 }
 
 /* ── Shopping List — right side ─────────────────── */

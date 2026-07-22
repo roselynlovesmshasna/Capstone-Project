@@ -72,12 +72,20 @@ sliderEl.addEventListener('mouseleave', () => { mouseDown = false; });
 
 startAuto();
 
-// ── Search ──────────────────────────────────────
+// ── Product Catalog ─────────────────────────────
 const PRODUCTS = [
-  { id: 'sneakers', name: 'Classic Sneakers',  price: 89.99,  img: 'https://placehold.co/100x100/ede9fe/4f46e5?text=👟',  tags: ['shoe','sneaker','footwear','classic'] },
-  { id: 'tote',     name: 'Leather Tote Bag',  price: 129.00, img: 'https://placehold.co/100x100/fef3c7/d97706?text=👜',  tags: ['bag','tote','leather','handbag'] },
-  { id: 'glasses',  name: 'UV Sunglasses',     price: 45.00,  img: 'https://placehold.co/100x100/d1fae5/065f46?text=🕶️', tags: ['glasses','sunglasses','uv','shades'] },
-  { id: 'watch',    name: 'Smart Watch',        price: 199.99, img: 'https://placehold.co/100x100/e0e7ff/3730a3?text=⌚',  tags: ['watch','smart','smartwatch','wrist'] },
+  { id: 'sneakers',  name: 'Classic Sneakers',   price: 89.99,  img: 'https://placehold.co/100x100/ede9fe/4f46e5?text=👟',  tags: ['shoe','sneaker','footwear','classic'] },
+  { id: 'tote',      name: 'Leather Tote Bag',   price: 129.00, img: 'https://placehold.co/100x100/fef3c7/d97706?text=👜',  tags: ['bag','tote','leather','handbag'] },
+  { id: 'glasses',   name: 'UV Sunglasses',      price: 45.00,  img: 'https://placehold.co/100x100/d1fae5/065f46?text=🕶️', tags: ['glasses','sunglasses','uv','shades'] },
+  { id: 'watch',     name: 'Smart Watch',        price: 199.99, img: 'https://placehold.co/100x100/e0e7ff/3730a3?text=⌚',  tags: ['watch','smart','smartwatch','wrist'] },
+  { id: 'runners',   name: 'Running Shoes',      price: 74.99,  img: 'https://placehold.co/100x100/fce7f3/db2777?text=👟',  tags: ['shoe','running','runners','sport'] },
+  { id: 'backpack',  name: 'Canvas Backpack',    price: 59.99,  img: 'https://placehold.co/100x100/e0f2fe/0284c7?text=🎒',  tags: ['bag','backpack','canvas','travel'] },
+  { id: 'headphones',name: 'Wireless Headphones', price: 149.99, img: 'https://placehold.co/100x100/f3e8ff/9333ea?text=🎧',  tags: ['headphones','audio','wireless','music'] },
+  { id: 'wallet',    name: 'Slim Leather Wallet',price: 34.99,  img: 'https://placehold.co/100x100/ffedd5/c2410c?text=👛',  tags: ['wallet','leather','accessory'] },
+  { id: 'cap',       name: 'Baseball Cap',        price: 24.99,  img: 'https://placehold.co/100x100/dcfce7/166534?text=🧢',  tags: ['cap','hat','baseball','headwear'] },
+  { id: 'jeans',     name: 'Denim Jeans',         price: 69.99,  img: 'https://placehold.co/100x100/dbeafe/1d4ed8?text=👖',  tags: ['jeans','denim','pants','clothing'] },
+  { id: 'tshirt',    name: 'Cotton T-Shirt',      price: 19.99,  img: 'https://placehold.co/100x100/fef3c7/d97706?text=👕',  tags: ['shirt','tshirt','cotton','clothing'] },
+  { id: 'scarf',     name: 'Wool Scarf',          price: 39.99,  img: 'https://placehold.co/100x100/fce7f3/db2777?text=🧣',  tags: ['scarf','wool','winter','accessory'] },
 ];
 
 const searchInput    = document.getElementById('searchInput');
@@ -153,8 +161,31 @@ function addToCart(id, name, price, img) {
   saveCart(cart);
 }
 
-// ── Product card +/− qty and Save ───────────────
-document.querySelectorAll('.product-card').forEach(card => {
+function formatPrice(n) {
+  return '$' + parseFloat(n).toFixed(2);
+}
+
+// ── Item rotation (every 5 minutes) ──────────────
+const FIVE_MINUTES = 5 * 60 * 1000;
+let currentListItems = [];
+
+function getRotationIndex() {
+  return Math.floor(Date.now() / FIVE_MINUTES);
+}
+
+function pickItems(start, count) {
+  const items = [];
+  for (let i = 0; i < count; i++) {
+    items.push(PRODUCTS[(start + i) % PRODUCTS.length]);
+  }
+  return items;
+}
+
+function cardImageUrl(name) {
+  return `https://placehold.co/200x180/f3f4f6/374151?text=${encodeURIComponent(name.replace(/ /g, '+'))}`;
+}
+
+function attachCardListeners(card) {
   const plusBtn  = card.querySelector('.qty-btn.plus');
   const minusBtn = card.querySelector('.qty-btn.minus');
   const display  = card.querySelector('.qty-display');
@@ -165,18 +196,16 @@ document.querySelectorAll('.product-card').forEach(card => {
   const img      = card.dataset.img;
   let saved = false;
 
-  function updateCardQtyFromCart() {
+  function updateCardQty() {
     const cart = getCart();
     const item = cart.find(i => i.id === id);
     display.textContent = item ? item.qty : 0;
   }
-  updateCardQtyFromCart();
+  updateCardQty();
 
   plusBtn.addEventListener('click', () => {
     addToCart(id, name, price, img);
-    updateCardQtyFromCart();
-    plusBtn.classList.add('clicked');
-    setTimeout(() => plusBtn.classList.remove('clicked'), 200);
+    updateCardQty();
   });
 
   minusBtn.addEventListener('click', () => {
@@ -185,46 +214,99 @@ document.querySelectorAll('.product-card').forEach(card => {
     if (item) {
       item.qty--;
       if (item.qty <= 0) {
-        const idx = cart.indexOf(item);
-        cart.splice(idx, 1);
+        cart.splice(cart.indexOf(item), 1);
       }
       saveCart(cart);
-      updateCardQtyFromCart();
+      updateCardQty();
     }
   });
 
   saveBtn.addEventListener('click', () => {
     saved = !saved;
-    saveBtn.textContent   = saved ? 'Saved ♥' : 'Save';
-    saveBtn.style.color   = saved ? '#ef4444' : '';
+    saveBtn.textContent = saved ? 'Saved ♥' : 'Save';
+    saveBtn.style.color = saved ? '#ef4444' : '';
   });
-});
+}
 
-// ── Shopping list + buttons ──────────────────────
-const listItems = [
-  { id: 'sneakers', name: 'Classic Sneakers', price: '89.99', img: 'https://placehold.co/100x100/ede9fe/4f46e5?text=👟' },
-  { id: 'tote',     name: 'Leather Tote Bag', price: '129.00', img: 'https://placehold.co/100x100/fef3c7/d97706?text=👜' },
-  { id: 'glasses',  name: 'UV Sunglasses',    price: '45.00',  img: 'https://placehold.co/100x100/d1fae5/065f46?text=🕶️' },
-  { id: 'watch',    name: 'Smart Watch',      price: '199.99', img: 'https://placehold.co/100x100/e0e7ff/3730a3?text=⌚' },
-];
+function renderFeaturedCards() {
+  const idx = getRotationIndex();
+  const featured = pickItems(idx, 2);
+  const container = document.getElementById('productCards');
+  container.innerHTML = '';
 
-document.querySelectorAll('.add-to-cart-btn').forEach((btn, i) => {
-  btn.addEventListener('click', () => {
-    const item = listItems[i];
-    addToCart(item.id, item.name, item.price, item.img);
-    btn.innerHTML = '<i class="fas fa-check"></i>';
-    btn.style.background = '#16a34a';
-    btn.style.color = '#fff';
-    setTimeout(() => {
-      btn.innerHTML = '<i class="fas fa-plus"></i>';
-      btn.style.background = '';
-      btn.style.color = '';
-    }, 1200);
+  featured.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.dataset.id = p.id;
+    card.dataset.name = p.name;
+    card.dataset.price = p.price;
+    card.dataset.img = p.img;
+    card.innerHTML = `
+      <div class="card-image">
+        <img src="${cardImageUrl(p.name)}" alt="${p.name}" />
+      </div>
+      <div class="card-info">
+        <span class="card-name">${p.name}</span>
+        <span class="card-price">${formatPrice(p.price)}</span>
+      </div>
+      <div class="card-controls">
+        <button class="qty-btn plus">+</button>
+        <span class="qty-display">0</span>
+        <button class="qty-btn minus">−</button>
+        <button class="save-btn">Save</button>
+      </div>
+    `;
+    attachCardListeners(card);
+    container.appendChild(card);
   });
-});
+}
+
+function renderShoppingList() {
+  const idx = getRotationIndex();
+  const items = pickItems(idx + 2, 4);
+  currentListItems = items;
+  const container = document.getElementById('shoppingList');
+  container.innerHTML = '';
+
+  items.forEach(p => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <img src="${p.img}" alt="${p.name}" />
+      <div class="list-item-info">
+        <span class="item-name">${p.name}</span>
+        <span class="item-price">${formatPrice(p.price)}</span>
+      </div>
+      <button class="add-to-cart-btn" data-id="${p.id}"><i class="fas fa-plus"></i></button>
+    `;
+    const btn = li.querySelector('.add-to-cart-btn');
+    btn.addEventListener('click', () => {
+      addToCart(p.id, p.name, p.price.toString(), p.img);
+      btn.innerHTML = '<i class="fas fa-check"></i>';
+      btn.style.background = '#16a34a';
+      btn.style.color = '#fff';
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-plus"></i>';
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 1200);
+    });
+    container.appendChild(li);
+  });
+}
+
+function rotateItems() {
+  renderFeaturedCards();
+  renderShoppingList();
+}
+
+rotateItems();
+setInterval(rotateItems, FIVE_MINUTES);
 
 // ── Buy All ──────────────────────────────────────
-document.querySelector('.buy-all-btn').addEventListener('click', () => {
-  listItems.forEach(item => addToCart(item.id, item.name, item.price, item.img));
-  window.location.href = '/cart.html';
-});
+const buyAllBtn = document.getElementById('buyAllBtn');
+if (buyAllBtn) {
+  buyAllBtn.addEventListener('click', () => {
+    currentListItems.forEach(item => addToCart(item.id, item.name, item.price.toString(), item.img));
+    window.location.href = '/cart.html';
+  });
+}

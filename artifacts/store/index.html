@@ -62,67 +62,15 @@
 
   <!-- ── Bottom Section ── -->
   <section class="bottom-section">
-    <div class="product-cards">
-      <div class="product-card" data-id="sneakers" data-name="Classic Sneakers" data-price="89.99" data-img="https://placehold.co/100x100/ede9fe/4f46e5?text=👟">
-        <div class="card-image">
-          <img src="https://placehold.co/200x180/f3f4f6/374151?text=Sneakers" alt="Classic Sneakers" />
-        </div>
-        <div class="card-controls">
-          <button class="qty-btn plus">+</button>
-          <span class="qty-display">0</span>
-          <button class="qty-btn minus">−</button>
-          <button class="save-btn">Save</button>
-        </div>
-      </div>
-      <div class="product-card" data-id="tote" data-name="Leather Tote Bag" data-price="129.00" data-img="https://placehold.co/100x100/fef3c7/d97706?text=👜">
-        <div class="card-image">
-          <img src="https://placehold.co/200x180/f3f4f6/374151?text=Tote+Bag" alt="Leather Tote Bag" />
-        </div>
-        <div class="card-controls">
-          <button class="qty-btn plus">+</button>
-          <span class="qty-display">0</span>
-          <button class="qty-btn minus">−</button>
-          <button class="save-btn">Save</button>
-        </div>
-      </div>
+    <div class="product-cards" id="productCards">
+      <!-- JS fills two featured cards here -->
     </div>
     <div class="shopping-list">
       <h2>Shopping List</h2>
-      <ul class="list-items">
-        <li>
-          <img src="https://placehold.co/48x48/f3f4f6/374151?text=1" alt="Item" />
-          <div class="list-item-info">
-            <span class="item-name">Classic Sneakers</span>
-            <span class="item-price">$89.99</span>
-          </div>
-          <button class="add-to-cart-btn"><i class="fas fa-plus"></i></button>
-        </li>
-        <li>
-          <img src="https://placehold.co/48x48/f3f4f6/374151?text=2" alt="Item" />
-          <div class="list-item-info">
-            <span class="item-name">Leather Tote Bag</span>
-            <span class="item-price">$129.00</span>
-          </div>
-          <button class="add-to-cart-btn"><i class="fas fa-plus"></i></button>
-        </li>
-        <li>
-          <img src="https://placehold.co/48x48/f3f4f6/374151?text=3" alt="Item" />
-          <div class="list-item-info">
-            <span class="item-name">UV Sunglasses</span>
-            <span class="item-price">$45.00</span>
-          </div>
-          <button class="add-to-cart-btn"><i class="fas fa-plus"></i></button>
-        </li>
-        <li>
-          <img src="https://placehold.co/48x48/f3f4f6/374151?text=4" alt="Item" />
-          <div class="list-item-info">
-            <span class="item-name">Smart Watch</span>
-            <span class="item-price">$199.99</span>
-          </div>
-          <button class="add-to-cart-btn"><i class="fas fa-plus"></i></button>
-        </li>
+      <ul class="list-items" id="shoppingList">
+        <!-- JS fills four list items here -->
       </ul>
-      <button class="buy-all-btn">Buy All</button>
+      <button class="buy-all-btn" id="buyAllBtn">Buy All</button>
     </div>
   </section>
 
