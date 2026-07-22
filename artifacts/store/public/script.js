@@ -159,18 +159,37 @@ document.querySelectorAll('.product-card').forEach(card => {
   const minusBtn = card.querySelector('.qty-btn.minus');
   const display  = card.querySelector('.qty-display');
   const saveBtn  = card.querySelector('.save-btn');
-  let qty = 0;
+  const id       = card.dataset.id;
+  const name     = card.dataset.name;
+  const price    = card.dataset.price;
+  const img      = card.dataset.img;
   let saved = false;
 
+  function updateCardQtyFromCart() {
+    const cart = getCart();
+    const item = cart.find(i => i.id === id);
+    display.textContent = item ? item.qty : 0;
+  }
+  updateCardQtyFromCart();
+
   plusBtn.addEventListener('click', () => {
-    qty++;
-    display.textContent = qty;
+    addToCart(id, name, price, img);
+    updateCardQtyFromCart();
+    plusBtn.classList.add('clicked');
+    setTimeout(() => plusBtn.classList.remove('clicked'), 200);
   });
 
   minusBtn.addEventListener('click', () => {
-    if (qty > 0) {
-      qty--;
-      display.textContent = qty;
+    const cart = getCart();
+    const item = cart.find(i => i.id === id);
+    if (item) {
+      item.qty--;
+      if (item.qty <= 0) {
+        const idx = cart.indexOf(item);
+        cart.splice(idx, 1);
+      }
+      saveCart(cart);
+      updateCardQtyFromCart();
     }
   });
 

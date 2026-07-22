@@ -1,5 +1,5 @@
 /* ── Font ──────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+/* Georgia is a built-in system font — no import needed */
 
 /* ── Reset ─────────────────────────────────────── */
 *, *::before, *::after {
@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: 'Bubblegum Sans', cursive;
+  font-family: Georgia, 'Times New Roman', serif;
 }
 
 /* ── Navbar ────────────────────────────────────── */
