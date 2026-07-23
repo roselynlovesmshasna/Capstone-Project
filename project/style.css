@@ -203,3 +203,19 @@
     width: 100%;
   }
 }
+
+.welcome-box {
+  background-color: #4f46e5;
+  color: #ffffff;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  margin: 1rem auto;
+  max-width: 1400px;
+  border-radius: 8px;
+}
+
+.welcome-box h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+}

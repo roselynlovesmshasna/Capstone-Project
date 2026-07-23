@@ -13,8 +13,9 @@
   <!-- ── Navbar ── -->
   <nav class="navbar">
     <div class="nav-search">
-      <input type="text" placeholder="Search..." />
-      <button><i class="fas fa-search"></i></button>
+      <input type="text" id="searchInput" placeholder="Search..." autocomplete="off" />
+      <button id="searchBtn"><i class="fas fa-search"></i></button>
+      <div class="search-dropdown" id="searchDropdown"></div>
     </div>
     <div class="nav-actions">
       <a href="/" class="nav-btn">Home</a>
@@ -134,5 +135,6 @@
   </main>
 
   <script src="/cart.js?v=2"></script>
+  <script src="/search.js"></script>
 </body>
 </html>
