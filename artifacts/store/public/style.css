@@ -141,6 +141,16 @@ body {
   display: block;
 }
 
+/* ── Welcome Message ───────────────────────────── */
+.welcome-message {
+  width: 100%;
+  text-align: center;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  background: #f9fafb;
+  color: #374151;
+}
+
 /* ── Slider ────────────────────────────────────── */
 .slider {
   width: 100%;
